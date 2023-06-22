@@ -1,4 +1,4 @@
-# Android device tree for Xiaomi ziyi (ziyi)
+# Android device tree for Xiaomi 13 Lite (ziyi)
 
 ```
 #
