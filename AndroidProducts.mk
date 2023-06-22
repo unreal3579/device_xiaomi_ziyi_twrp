@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_ziyi.mk
+    $(LOCAL_DIR)/twrp_ziyi.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_ziyi-user \
-    omni_ziyi-userdebug \
-    omni_ziyi-eng
+    twrp_ziyi-user \
+    twrp_ziyi-userdebug \
+    twrp_ziyi-eng
