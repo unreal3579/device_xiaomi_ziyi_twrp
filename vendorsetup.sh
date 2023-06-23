@@ -31,7 +31,7 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 	export OF_STATUS_H=100
 	export OF_STATUS_INDENT_LEFT=48
 	export OF_STATUS_INDENT_RIGHT=48
-  	export OF_HIDE_NOTCH=1
+ export OF_HIDE_NOTCH=1
 	export OF_CLOCK_POS=1
 	export OF_USE_MAGISKBOOT=1
 	export OF_AB_DEVICE=1
@@ -62,32 +62,12 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 	export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
 
 	# -- add settings for R11 --
-    export OF_MAINTAINER=dkpost3
+    export OF_MAINTAINER=unreal3579
     export FOX_BUILD_TYPE="Stable"
     export FOX_VARIANT=A13
 	export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
 	export OF_QUICK_BACKUP_LIST="/boot;/data;"
 	# -- end R11 settings --
-
-    # Avatar Settings
-    if [ -n "$OF_MAINTAINER_AVATAR" ]; then
-        if [ ! -f "$OF_MAINTAINER_AVATAR" ]; then
-              # some colour codes
-              RED='\033[0;31m'
-              GREEN='\033[0;32m'
-              ORANGE='\033[0;33m'
-              BLUE='\033[0;34m'
-              PURPLE='\033[0;35m'
-              echo -e "${RED}-- File \"$OF_MAINTAINER_AVATAR\" not found  ...${NC}"
-              echo -e "${ORANGE}-- Downloading...${NC}"
-              mkdir -p misc
-              curl https://github.com/dkpost3/device_xiaomi_lisa-twrp/blob/Android-13-MIUI/bootctrl/2023-05-31_06-03-01.png >> $OF_MAINTAINER_AVATAR
-              echo -e "${BLUE}-- Successfully Downloaded the Avatar Image \"$OF_MAINTAINER_AVATAR\" ...${NC}"
-              echo -e "${PURPLE}-- Using A Custom Maintainer Avatar from the Downloaded Image \"$OF_MAINTAINER_AVATAR\" ...${NC}"
-              echo -e "${GREEN}-- Done!"
-        fi
-    fi
-
 
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
