@@ -48,17 +48,43 @@ TARGET_BOOTLOADER_BOARD_NAME := taro
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-BOARD_BOOTIMG_HEADER_VERSION := 4
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
+BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_IMAGE_NAME := Image
-TARGET_KERNEL_CONFIG := ziyi_defconfig
-TARGET_KERNEL_SOURCE := kernel/xiaomi/ziyi
+BOARD_KERNEL_PAGESIZE := 4096
+
+BOARD_KERNEL_SEPERATED_DTBO := true
+BOARD_BOOT_HEADER_VERSION := 4
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
+
+BOARD_KERNEL_CMDLINE += androidboot.console=ttyMSM0
+BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom
+BOARD_KERNEL_CMDLINE += androidboot.memcg=1
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a600000.dwc3
+BOARD_KERNEL_CMDLINE += cgroup.memory=nokmem,nosocket
+BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200n8
+BOARD_KERNEL_CMDLINE += earlycon=msm_geni_serial,0x880000
+BOARD_KERNEL_CMDLINE += ip6table_raw.raw_before_defrag=1
+BOARD_KERNEL_CMDLINE += iptable_raw.raw_before_defrag=1
+BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1
+BOARD_KERNEL_CMDLINE += msm_rtb.filter=0x237
+BOARD_KERNEL_CMDLINE += pcie_ports=compat
+BOARD_KERNEL_CMDLINE += service_locator.enable=1
+BOARD_KERNEL_CMDLINE += swiotlb=0
+BOARD_KERNEL_CMDLINE += video=vfb:640x400,bpp=32,memsize=3072000
+
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
+BOARD_MKBOOTIMG_ARGS += --dtb $(DEVICE_PATH)/prebuilt/dtb.img
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
+
+#TARGET_KERNEL_CONFIG := ziyi_defconfig
+#TARGET_KERNEL_SOURCE := kernel/xiaomi/ziyi
 
 # Kernel - prebuilt
-TARGET_FORCE_PREBUILT_KERNEL := true
-ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
-endif
+#TARGET_FORCE_PREBUILT_KERNEL := true
+#ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
+#TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
+#endif
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 104857600
@@ -70,14 +96,15 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
 BOARD_SUPER_PARTITION_SIZE := 9126805504 # TODO: Fix hardcoded value
 BOARD_SUPER_PARTITION_GROUPS := xiaomi_dynamic_partitions
-BOARD_XIAOMI_DYNAMIC_PARTITIONS_PARTITION_LIST := system system system_ext system_ext product product vendor vendor odm odm mi_ext mi_ext
+BOARD_XIAOMI_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext product vendor odm
 BOARD_XIAOMI_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 
 # Platform
+BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := taro
 
 # Recovery
-TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
