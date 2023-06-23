@@ -5,46 +5,47 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-LOCAL_PATH := device/xiaomi/ziyi
-# A/B
-ENABLE_VIRTUAL_AB := true
-AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS += \
-    boot \
-    dtbo \
-    system \
-    system_ext \
-    product \
-    vendor \
-    vendor_boot \
-    odm \
-    vbmeta \
-    vbmeta_system \
+# Configure base.mk
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
-# A/B
-AB_OTA_POSTINSTALL_CONFIG += \
-    RUN_POSTINSTALL_system=true \
-    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=ext4 \
-    POSTINSTALL_OPTIONAL_system=true
+# Configure core_64_bit_only.mk
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 
-# Boot control HAL
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-service
+# Configure gsi_keys.mk
+$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+
+# Configure Virtual A/B
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
+# Configure SDCard replacement functionality
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
+# Configure twrp
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 PRODUCT_PACKAGES += \
     bootctrl.taro
 
-#PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-#    bootctrl.taro \
-#    libgptutils \
-#    libz \
-#    libcutils
+# SHIPPING API
+PRODUCT_SHIPPING_API_LEVEL := 30
+# VNDK API
+PRODUCT_TARGET_VNDK_VERSION := 31
 
-PRODUCT_PACKAGES += \
-    otapreopt_script \
-    cppreopts.sh \
-    update_engine \
-    update_verifier \
-    update_engine_sideload
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(DEVICE_PATH)
+
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# otacert
+PRODUCT_EXTRA_RECOVERY_KEYS += \
+    $(DEVICE_PATH)/security/releasekey
+
+TWRP_REQUIRED_MODULES += miui_prebuilt \
+    magisk_prebuilt
+
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
+# Copy modules for depmod
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*.ko,$(DEVICE_PATH)/prebuilt,$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules)
+
