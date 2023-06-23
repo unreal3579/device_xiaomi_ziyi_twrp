@@ -153,3 +153,4 @@ TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_EXCLUDE_APEX := true
 TW_HAS_EDL_MODE := true
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko gpr_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko snd_event_dlkm.ko spf_core_dlkm.ko"
