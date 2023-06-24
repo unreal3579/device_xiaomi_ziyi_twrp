@@ -14,7 +14,7 @@ DEVICE_PATH := device/xiaomi/ziyi
 #$(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from ziyi device
-$(call inherit-product, /device/xiaomi/ziyi/device.mk)
+$(call inherit-product, $(DEVICE_PATH)/device.mk)
 
 PRODUCT_RELEASE_NAME := ziyi
 
