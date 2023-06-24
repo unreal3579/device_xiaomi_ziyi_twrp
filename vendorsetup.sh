@@ -57,9 +57,9 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 	export OF_USE_NEW_MAGISKBOOT=1
 	#export FOX_BUGGED_AOSP_ARB_WORKAROUND="1510672800"; # Tue Nov 14 15:20:00 GMT 2017
 
-	# OTA for custom ROMs
-	export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
-	export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
+# OTA for custom ROMs
+#	export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
+#	export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
 
 	# -- add settings for R11 --
     export OF_MAINTAINER=unreal3579
