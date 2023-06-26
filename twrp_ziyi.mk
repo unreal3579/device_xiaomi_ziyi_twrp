@@ -22,7 +22,15 @@ PRODUCT_DEVICE := ziyi
 PRODUCT_NAME := twrp_ziyi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Xiaomi 13 Lite
-PRODUCT_MANUFACTURER := xiaomi
+PRODUCT_MANUFACTURER := Xiaomi
 
 #PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := ziyi
+
+# Theme
+TW_STATUS_ICON_ALIGN := center
+#TW_Y_OFFSET :=
+#TW_H_OFFSET :=
 
