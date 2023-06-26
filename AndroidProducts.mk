@@ -5,10 +5,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_ziyi.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/twrp_ziyi.mk
 
-COMMON_LUNCH_CHOICES := \
-    twrp_ziyi-user \
-    twrp_ziyi-userdebug \
-    twrp_ziyi-eng
+COMMON_LUNCH_CHOICES := twrp_ziyi-eng
