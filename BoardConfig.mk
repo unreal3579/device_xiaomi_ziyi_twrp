@@ -193,8 +193,9 @@ TW_DEFAULT_LANGUAGE := en_US
 TW_DEFAULT_BRIGHTNESS := 200
 TW_EXCLUDE_APEX := true
 TW_HAS_EDL_MODE := true
-
-
 #TW_SCREEN_BLANK_ON_BOOT := true
 #TW_INCLUDE_REPACKTOOLS := true
 TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko gpr_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko snd_event_dlkm.ko spf_core_dlkm.ko"
+
+# Ofox
+FOX_BUILD_DEVICE := ziyi
