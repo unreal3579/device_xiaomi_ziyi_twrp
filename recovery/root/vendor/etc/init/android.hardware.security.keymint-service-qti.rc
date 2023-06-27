@@ -2,10 +2,12 @@
 # All Rights Reserved.
 # Confidential and Proprietary - Qualcomm Technologies, Inc.
 
-on init
-    start vendor.keymint-qti
+on property:hwservicemanager.ready=true && property:vendor.sys.listeners.registered=true
+    start keymint-qti
 
-service vendor.keymint-qti /vendor/bin/hw/android.hardware.security.keymint-service-qti
-    class early_hal
-    user system
-    group system drmrpc
+service keymint-qti /system/bin/android.hardware.security.keymint-service-qti
+    user root
+    group root
+	setend LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
+	disabled
+	seclabel u:r:recovery:s0
