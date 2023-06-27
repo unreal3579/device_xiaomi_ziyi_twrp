@@ -35,4 +35,8 @@ This file is copied from
         <name>android.hardware.security.secureclock</name>
         <fqname>ISecureClock/default</fqname>
     </hal>
+    <hal format="aidl">
+        <name>android.hardware.security.keymint</name>
+        <fqname>IRemotelyProvisionedComponent/default</fqname>
+    </hal>
 </manifest>
