@@ -8,6 +8,6 @@ on property:hwservicemanager.ready=true && property:vendor.sys.listeners.registe
 service keymint-qti /system/bin/android.hardware.security.keymint-service-qti
     user root
     group root
-	setend LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
+	setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
 	disabled
 	seclabel u:r:recovery:s0
