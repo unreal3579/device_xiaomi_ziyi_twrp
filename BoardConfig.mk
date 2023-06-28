@@ -226,11 +226,13 @@ TW_MAX_BRIGHTNESS := 2047
 TW_EXTRA_LANGUAGES := true
 TW_DEFAULT_LANGUAGE := en_US
 TW_DEFAULT_BRIGHTNESS := 200
+TW_Y_OFFSET := 90
+TW_H_OFFSET := -90
 TW_EXCLUDE_APEX := true
 TW_HAS_EDL_MODE := true
 #TW_SCREEN_BLANK_ON_BOOT := true
 #TW_INCLUDE_REPACKTOOLS := true
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko gpr_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko snd_event_dlkm.ko spf_core_dlkm.ko"
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko gpr_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko snd_event_dlkm.ko spf_core_dlkm.ko synaptics_tcm_core_module.ko"
 
 # Ofox
 FOX_BUILD_DEVICE := ziyi
