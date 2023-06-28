@@ -25,18 +25,13 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 on early-init
-    insmod /vendor/lib/modules/q6_pdr_dlkm.ko
     insmod /vendor/lib/modules/1.1/q6_pdr_dlkm.ko
-    insmod /vendor/lib/modules/q6_notifier_dlkm.ko
     insmod /vendor/lib/modules/1.1/q6_notifier_dlkm.ko
-    insmod /vendor/lib/modules/snd_event_dlkm.ko
     insmod /vendor/lib/modules/1.1/snd_event_dlkm.ko
-    insmod /vendor/lib/modules/gpr_dlkm.ko
     insmod /vendor/lib/modules/1.1/gpr_dlkm.ko
-    insmod /vendor/lib/modules/spf_core_dlkm.ko
     insmod /vendor/lib/modules/1.1/spf_core_dlkm.ko
-    insmod /vendor/lib/modules/adsp_loader_dlkm.ko
     insmod /vendor/lib/modules/1.1/adsp_loader_dlkm.ko
+    insmod /vendor/lib/modules/1.1/synaptics_tcm_core_module.ko
 
 on early-fs
     write /proc/sys/walt/sched_lib_name "recovery,magiskboot,Updater,updater,update_engine_sideload"
