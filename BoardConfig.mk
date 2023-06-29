@@ -240,9 +240,9 @@ TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/vibratorfeature"
 TW_SUPPORT_INPUT_AIDL_HAPTICS_FIX_OFF := true
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko qti_battery_charger.ko synaptics_tcm_core_module.ko"
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko qti_battery_charger.ko synaptics_tcm_core_module.ko haptic.ko swr_haptics_dlkm.ko goodix_core.ko focaltech_fps.ko aw882xx_dlkm.ko aw88179_178a.ko"
 TW_NO_SCREEN_TIMEOUT := true
-TW_NO_SCREEN_BLANK := true
+#TW_NO_SCREEN_BLANK := true
 
 # Ofox
 FOX_BUILD_DEVICE := ziyi
