@@ -4,7 +4,7 @@
 
 Device   | Xiaomi 13 Lite
 -------:|:-------------------------
-Codename| Ziyi
+Codename| ziyi
 SoC     | Snapdragon® 7 Gen 1 (SM7450)
 CPU     | 1x2.40 GHz Cortex-A710 & 3x2.36 GHz Cortex-A710 & 4x1.80 GHz Cortex-A510
 GPU     | Adreno (TM) 644
