@@ -1,4 +1,4 @@
-# Android device tree for Xiaomi 13 Lite (ziyi)
+# Android device tree Xiaomi 13 Lite (ziyi) for TWRP Recovery
 
 ```
 #
