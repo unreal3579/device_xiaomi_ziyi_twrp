@@ -46,7 +46,7 @@ AB_OTA_PARTITIONS += \
     vbmeta \
     vbmeta_system \
     vendor \
-	   vendor_dlkm \
+	vendor_dlkm \
     vendor_boot
 
 # Avb
@@ -103,6 +103,7 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
+BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
 
 
 BOARD_KERNEL_CMDLINE := video=vfb:640x400,bpp=32,memsize=3072000
@@ -160,6 +161,7 @@ BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 BOARD_VENDOR_DLKMIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_SYSTEMIMAGE_PARTITION_TYPE := erofs
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
@@ -167,7 +169,6 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 #BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
 #BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 100663295
 
-#BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
 
 
 # System as root
@@ -225,14 +226,23 @@ TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
 TW_MAX_BRIGHTNESS := 2047
 TW_EXTRA_LANGUAGES := true
 TW_DEFAULT_LANGUAGE := en_US
-TW_DEFAULT_BRIGHTNESS := 200
-TW_Y_OFFSET := 90
-TW_H_OFFSET := -90
+TW_DEFAULT_BRIGHTNESS := 204
+TW_Y_OFFSET := 100
+TW_H_OFFSET := -100
 TW_EXCLUDE_APEX := true
 TW_HAS_EDL_MODE := true
 #TW_SCREEN_BLANK_ON_BOOT := true
 #TW_INCLUDE_REPACKTOOLS := true
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko gpr_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko snd_event_dlkm.ko spf_core_dlkm.ko synaptics_tcm_core_module.ko"
+
+# Haptic
+TW_SUPPORT_INPUT_AIDL_HAPTICS := true
+TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/vibratorfeature"
+TW_SUPPORT_INPUT_AIDL_HAPTICS_FIX_OFF := true
+TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
+
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko qti_battery_charger.ko synaptics_tcm_core_module.ko"
+TW_NO_SCREEN_TIMEOUT := true
+TW_NO_SCREEN_BLANK := true
 
 # Ofox
 FOX_BUILD_DEVICE := ziyi
@@ -241,3 +251,6 @@ FOX_BUILD_DEVICE := ziyi
 SOONG_CONFIG_NAMESPACES += ufsbsg
 SOONG_CONFIG_ufsbsg += ufsframework
 SOONG_CONFIG_ufsbsg_ufsframework := bsg
+
+# The path to a temperature sensor
+TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone50/temp"
