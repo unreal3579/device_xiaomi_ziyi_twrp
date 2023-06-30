@@ -242,9 +242,6 @@ TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko qti_battery_charger.ko synaptics_
 #TW_NO_SCREEN_TIMEOUT := true
 TW_NO_SCREEN_BLANK := true
 
-# Ofox
-FOX_BUILD_DEVICE := ziyi
-
 # Namespace definition for librecovery_updater
 SOONG_CONFIG_NAMESPACES += ufsbsg
 SOONG_CONFIG_ufsbsg += ufsframework
