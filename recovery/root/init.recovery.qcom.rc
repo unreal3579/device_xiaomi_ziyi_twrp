@@ -49,7 +49,7 @@ on fs
 
 on init
     start boot-hal-1-2
-    write /sys/class/backlight/panel0-backlight/brightness 200
+    write /sys/class/backlight/panel0-backlight/brightness 204
     setprop sys.usb.configfs 1
 on boot
     setprop sys.usb.config adb
