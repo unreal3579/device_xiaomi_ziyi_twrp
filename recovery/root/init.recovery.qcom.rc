@@ -48,9 +48,22 @@ on fs
     install_keyring
 
 on init
+	  	mkdir /mnt/vendor/persist
+    chmod 0777 /mnt/vendor/persist
+    chown root:root /mnt/vendor/persist
+    mount /dev/block/by-name/persist /mnt/vendor/persist
+    export LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw
+    start vibratorfeature		
     start boot-hal-1-2
     write /sys/class/backlight/panel0-backlight/brightness 204
     setprop sys.usb.configfs 1
+
+service vibratorfeature /vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
+    user root
+    group root input
+    onrestart restart vibratorfeature
+    seclabel u:r:recovery:s0
+    
 on boot
     setprop sys.usb.config adb
 
@@ -65,3 +78,4 @@ on property:twrp.modules.loaded=true
     start health-hal-2-1
     start vibratorfeature-hal-service
     umount /firmware
+
