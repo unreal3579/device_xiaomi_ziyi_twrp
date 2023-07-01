@@ -6,6 +6,7 @@
 #
 
 LOCAL_PATH := device/xiaomi/ziyi
+DEVICE_PATH := device/xiaomi/ziyi
 
 # Configure base.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
@@ -28,9 +29,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Configure twrp
 #$(call inherit-product, vendor/twrp/config/common.mk)
 
-#PRODUCT_PACKAGES += \
-#    bootctrl.taro.recovery \
-#	android.hardware.boot@1.2-impl-qti.recovery
+PRODUCT_PACKAGES += \
+    bootctrl.taro \
+    bootctrl.taro.recovery \
+ 	android.hardware.boot@1.2-impl-qti.recovery
 
 # A/B related packages
 ENABLE_AB := true
