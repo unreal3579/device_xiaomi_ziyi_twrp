@@ -106,10 +106,10 @@ PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # otacert
-#PRODUCT_EXTRA_RECOVERY_KEYS += \
-#    $(DEVICE_PATH)/security/releasekey
+PRODUCT_EXTRA_RECOVERY_KEYS += \
+    $(DEVICE_PATH)/security/releasekey
 
-#TWRP_REQUIRED_MODULES += miui_prebuilt magisk_prebuilt
+TWRP_REQUIRED_MODULES += miui_prebuilt magisk_prebuilt
 
 #PRODUCT_USE_DYNAMIC_PARTITIONS := true
 #BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
