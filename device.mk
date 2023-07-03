@@ -31,8 +31,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 PRODUCT_PACKAGES += \
     bootctrl.taro \
-    bootctrl.taro.recovery \
- 	android.hardware.boot@1.2-impl-qti.recovery
+    bootctrl.taro.recovery
 
 # A/B related packages
 ENABLE_AB := true
@@ -90,9 +89,6 @@ TARGET_HAS_GENERIC_KERNEL_HEADERS := true
 PRODUCT_PACKAGES += \
     checkpoint_gc
 
-# SHIPPING API
-#PRODUCT_SHIPPING_API_LEVEL := 31
-
 # VNDK API
 #PRODUCT_TARGET_VNDK_VERSION := 33
 
@@ -112,8 +108,6 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
     $(DEVICE_PATH)/security/releasekey
 
 TWRP_REQUIRED_MODULES += miui_prebuilt magisk_prebuilt
-
-#PRODUCT_USE_DYNAMIC_PARTITIONS := true
 #BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 # Copy modules for depmod
 #PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*.ko,$(DEVICE_PATH)/prebuilt,$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules)
