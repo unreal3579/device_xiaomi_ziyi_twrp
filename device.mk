@@ -90,7 +90,7 @@ PRODUCT_PACKAGES += \
     checkpoint_gc
 
 # VNDK API
-#PRODUCT_TARGET_VNDK_VERSION := 33
+PRODUCT_TARGET_VNDK_VERSION := 31
 
 # Board
 BOARD_SHIPPING_API_LEVEL := 31
@@ -108,7 +108,7 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
     $(DEVICE_PATH)/security/releasekey
 
 TWRP_REQUIRED_MODULES += miui_prebuilt magisk_prebuilt
-#BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
+BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 # Copy modules for depmod
 #PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*.ko,$(DEVICE_PATH)/prebuilt,$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules)
 
