@@ -9,7 +9,7 @@ LOCAL_PATH := device/xiaomi/ziyi
 DEVICE_PATH := device/xiaomi/ziyi
 
 # Enable updating of APEXes
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+#$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Configure base.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
