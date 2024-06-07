@@ -1,6 +1,7 @@
 # ADB
 ro.adb.secure=0
 ro.boot.dynamic_partitions=true
+keymaster_ver=4.1
 
 # Gatekeeper
 vendor.gatekeeper.disable_spu=true
@@ -9,9 +10,9 @@ vendor.gatekeeper.disable_spu=true
 ro.charger.enable_suspend=1
 
 # Storage
-external_storage.projid.enabled=1
-external_storage.casefold.enabled=1
-external_storage.sdcardfs.enabled=0
+#external_storage.projid.enabled=1
+#external_storage.casefold.enabled=1
+#external_storage.sdcardfs.enabled=0
 
 # Crypto
 ro.crypto.allow_encrypt_override=true
@@ -20,4 +21,4 @@ ro.crypto.volume.filenames_mode=aes-256-cts
 ro.crypto.volume.metadata.method=dm-default-key
 
 # USB
-vendor.usb.use_ffs_mtp=1
+#vendor.usb.use_ffs_mtp=1
