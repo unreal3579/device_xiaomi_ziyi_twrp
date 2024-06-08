@@ -155,9 +155,6 @@ TW_BACKUP_EXCLUSIONS        := /data/fonts
 TW_LOAD_VENDOR_BOOT_MODULES := true
 TW_NO_SCREEN_BLANK          := true
 
-#PB
-PB_TORCH_PATH := "/sys/class/leds/led:torch_0"
-
 # A/B related packages
 ENABLE_AB := true
 ENABLE_VIRTUAL_AB := true
