@@ -16,7 +16,7 @@ on:
         default: 'twrp-14'
         type: choice
         options:
-        - 'twrp-12.1'
+        - 'twrp-14'
       DEVICE_TREE_URL:
         description: 'DEVICE_TREE_URL'
         required: true
