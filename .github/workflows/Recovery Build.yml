@@ -13,10 +13,10 @@ on:
       MANIFEST_BRANCH:
         description: 'MANIFEST_BRANCH'
         required: true
-        default: 'twrp-14'
+        default: 'twrp-12.1'
         type: choice
         options:
-        - 'twrp-14'
+        - 'twrp-12.1'
       DEVICE_TREE_URL:
         description: 'DEVICE_TREE_URL'
         required: true
