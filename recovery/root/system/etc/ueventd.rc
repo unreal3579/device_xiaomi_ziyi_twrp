@@ -37,8 +37,7 @@ subsystem dma_heap
 /dev/tty                  0666   root       root
 /dev/random               0666   root       root
 /dev/urandom              0666   root       root
-# Aside from kernel threads, only prng_seeder needs access to HW RNG
-/dev/hw_random            0400   prng_seeder prng_seeder
+/dev/hw_random            0600   root       root
 /dev/ashmem*              0666   root       root
 /dev/binder               0666   root       root
 /dev/hwbinder             0666   root       root
@@ -52,13 +51,11 @@ subsystem dma_heap
 # kms driver for drm based gpu
 /dev/dri/*                0666   root       graphics
 
-#MIUI ADD: Audio_MIUIAudioFrame
 # mius iio devices
 /dev/iio:device*                                        0660   system     system
 /sys/bus/iio/devices/iio:device* buffer/enable                  0600 system system
 /sys/bus/iio/devices/iio:device* scan_elements/in_proximity_en  0600 system system
 /sys/bus/iio/devices/iio:device* scan_elements/in_timestamp_en  0600 system system
-#END Audio_MIUIAudioFrame
 
 # these should not be world writable
 /dev/uhid                 0660   uhid       uhid
@@ -77,8 +74,9 @@ subsystem dma_heap
 # CDMA radio interface MUX
 /dev/ppp                  0660   radio      vpn
 
-/dev/kvm                  0666   root       root
-/dev/vhost-vsock          0666   root       root
+# Virtualisation is managed by Virt Manager
+/dev/kvm                  0600   virtmanager root
+/dev/vhost-vsock          0600   virtmanager root
 
 # sysfs properties
 /sys/devices/platform/trusty.*      trusty_version        0440  root   log
@@ -89,6 +87,3 @@ subsystem dma_heap
 /sys/devices/system/cpu/cpu*   cpufreq/scaling_min_freq   0664  system system
 /sys/devices/virtual/misc/uhid/*/leds/* brightness   0664  system system
 /sys/devices/virtual/misc/uhid/*/leds/* multi_intensity   0664  system system
-
-# added by xiaomi
-/dev/gsmtty*              0666 system     system

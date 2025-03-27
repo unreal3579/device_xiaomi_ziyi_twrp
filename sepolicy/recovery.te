@@ -1,0 +1,3 @@
+allow recovery input_device:chr_file { write };
+#allow recovery sysfs:file { open read getattr };
+allow recovery recovery:netlink_kobject_uevent_socket { read };

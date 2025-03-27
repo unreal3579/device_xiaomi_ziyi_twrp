@@ -1,0 +1,1 @@
+/vendor/firmware(/.*)?    u:object_r:vendor_firmware_file:s0
