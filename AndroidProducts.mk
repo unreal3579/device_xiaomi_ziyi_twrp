@@ -8,6 +8,6 @@
 PRODUCT_MAKEFILES := $(LOCAL_DIR)/twrp-ziyi.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp-ziyi-user \
-    twrp-ziyi-userdebug \
-    twrp-ziyi-eng
+    twrp_ziyi-user \
+    twrp_ziyi-userdebug \
+    twrp_ziyi-eng
