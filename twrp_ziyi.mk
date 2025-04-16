@@ -20,7 +20,7 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 PRODUCT_RELEASE_NAME := ziyi
 
 PRODUCT_DEVICE := ziyi
-PRODUCT_NAME := twrp-ziyi
+PRODUCT_NAME := twrp_ziyi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Xiaomi 13 Lite
 PRODUCT_MANUFACTURER := Xiaomi
