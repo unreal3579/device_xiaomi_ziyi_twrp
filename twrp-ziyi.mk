@@ -9,7 +9,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
 # Inherit from those products
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+#$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from device configuration
 $(call inherit-product, device/xiaomi/ziyi/device.mk)
@@ -20,7 +20,7 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 PRODUCT_RELEASE_NAME := ziyi
 
 PRODUCT_DEVICE := ziyi
-PRODUCT_NAME := twrp_ziyi
+PRODUCT_NAME := twrp-ziyi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Xiaomi 13 Lite
 PRODUCT_MANUFACTURER := Xiaomi
