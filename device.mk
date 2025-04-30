@@ -124,7 +124,7 @@ TW_INPUT_BLACKLIST := "uinput-goodix"
 
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone50/temp"
 TW_BRIGHTNESS_PATH      := "/sys/class/backlight/panel0-backlight/brightness"
-TW_LOAD_VENDOR_MODULES  += "adsp_loader_dlkm.ko qti_battery_charger.ko synaptics_tcm_core_module.ko haptic.ko swr_haptics_dlkm.ko goodix_core.ko focaltech_fps.ko aw882xx_dlkm.ko aw88179_178a.ko"
+TW_LOAD_VENDOR_MODULES  += "synaptics_tcm_core_module.ko"
 
 TW_EXCLUDE_DEFAULT_USB_INIT            := true
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
@@ -152,7 +152,6 @@ RECOVERY_SDCARD_ON_DATA     := true
 TW_NO_EXFAT_FUSE            := true
 TW_HAS_EDL_MODE             := true
 TW_BACKUP_EXCLUSIONS        := /data/fonts
-TW_LOAD_VENDOR_BOOT_MODULES := true
 TW_NO_SCREEN_BLANK          := true
 
 # A/B related packages
