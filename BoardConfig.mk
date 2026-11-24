@@ -32,7 +32,6 @@ TARGET_BOARD_PLATFORM         := taro
 TARGET_BOARD_PLATFORM_GPU     := qcom-adreno644											   
 BOARD_USES_QCOM_HARDWARE      := true
 QCOM_BOARD_PLATFORMS          += taro
-TARGET_BOARD_PLATFORM         := taro
 PRODUCT_PLATFORM              := taro
 
 # Kernel
