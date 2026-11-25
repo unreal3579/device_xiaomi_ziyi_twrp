@@ -97,8 +97,8 @@ TW_THEME                := portrait_hdpi
 TW_DEFAULT_LANGUAGE     := ru
 TW_USE_TOOLBOX          := true
 TW_INCLUDE_NTFS_3G      := true
-TW_INCLUDE_FUSE_EXFAT   := true
-TW_INCLUDE_FUSE_NTFS    := true
+#TW_INCLUDE_FUSE_EXFAT   := true
+#TW_INCLUDE_FUSE_NTFS    := true
 TW_INCLUDE_REPACKTOOLS  := true
 TW_INCLUDE_RESETPROP    := true
 TW_INCLUDE_LIBRESETPROP := true
@@ -115,7 +115,7 @@ TW_INCLUDE_PYTHON       := true
 TW_Y_OFFSET := 99
 TW_H_OFFSET := -99
 
-# Set panel refresh rate to 90 Hertz for smoother experience
+# Set panel refresh rate to 120 Hertz for smoother experience
 # Possible supported frequencies: 30, 60, 90, 120
 TW_FRAMERATE := 120
 
@@ -124,7 +124,7 @@ TW_INPUT_BLACKLIST := "uinput-goodix"
 
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone50/temp"
 TW_BRIGHTNESS_PATH      := "/sys/class/backlight/panel0-backlight/brightness"
-TW_LOAD_VENDOR_MODULES  += "synaptics_tcm_core_module.ko"
+TW_LOAD_VENDOR_MODULES  += synaptics_tcm_core_module.ko
 
 TW_EXCLUDE_DEFAULT_USB_INIT            := true
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
@@ -146,17 +146,16 @@ VENDOR_SECURITY_PATCH           := $(PLATFORM_SECURITY_PATCH)
 BOOT_SECURITY_PATCH             := $(PLATFORM_SECURITY_PATCH)
 
 #TWRP Configuration
-TW_INCLUDE_RESETPROP        := true
 TW_NO_FLASH_CURRENT_TWRP    := true
 RECOVERY_SDCARD_ON_DATA     := true
-TW_NO_EXFAT_FUSE            := true
+TW_NO_EXFAT_FUSE            := false
 TW_HAS_EDL_MODE             := true
 TW_BACKUP_EXCLUSIONS        := /data/fonts
 TW_NO_SCREEN_BLANK          := true
 
 # A/B related packages
-ENABLE_AB := true
-ENABLE_VIRTUAL_AB := true
+#ENABLE_AB := true
+#ENABLE_VIRTUAL_AB := true
 
 # otacert
 PRODUCT_EXTRA_RECOVERY_KEYS += \

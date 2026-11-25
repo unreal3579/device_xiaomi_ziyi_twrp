@@ -46,12 +46,12 @@ on fs
     chmod 0664 /dev/ion
     chown system system /dev/ion
     install_keyring
-
-on init
     mkdir /mnt/vendor/persist
     chmod 0777 /mnt/vendor/persist
     chown root:root /mnt/vendor/persist
-    mount /dev/block/by-name/persist /mnt/vendor/persist
+    mount /dev/block/bootdevice/by-name/persist /mnt/vendor/persist
+    
+on init
     export LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw
     start boot-hal-1-2
     write /sys/class/backlight/panel0-backlight/brightness 204
