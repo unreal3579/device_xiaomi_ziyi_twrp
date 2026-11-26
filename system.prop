@@ -1,3 +1,4 @@
+keymaster_ver=4.1
 # ADB
 ro.adb.secure=0
 ro.boot.dynamic_partitions=true
