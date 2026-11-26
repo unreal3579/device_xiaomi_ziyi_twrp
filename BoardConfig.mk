@@ -100,8 +100,7 @@ BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST += \
 	product \
 	vendor \
 	vendor_dlkm \
-	odm \
-	mi_ext
+	odm
 
 BOARD_PARTITION_LIST := $(call to-upper, $(BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST))
 $(foreach p, $(BOARD_PARTITION_LIST), $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := erofs))
